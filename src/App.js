@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/header';
 import AddForm from './components/addForm';
@@ -14,8 +13,8 @@ class App extends Component {
       ],
       task: ''
     }
-    this.handleChange = this.handleChange.bind()
-    this.handleSubmit = this.handleSubmit.bind()
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleSubmit(event) {
@@ -26,7 +25,7 @@ class App extends Component {
   handleChange(event) {
     console.log(event)
     // this.state.task = event.target.value
-    // this.setState((state) => {task: "event.target.value"})
+    this.setState({task: "event.target.value"})
   }
 
   render() {
