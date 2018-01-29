@@ -1,9 +1,11 @@
 import React from 'react';
+import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+
 
 export default ({task}) => {
     return (
-        <div>
-            <p>{task}</p>
-        </div>
+        <ListItem button>
+            {task}
+        </ListItem>
     );
 }

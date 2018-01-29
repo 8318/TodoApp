@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/header';
+import HeaderComponent from './components/header';
 import AddForm from './components/addForm';
 import Task from './components/task';
+import List from 'material-ui/List';
+
 
 class App extends Component {
   constructor(props){
@@ -33,13 +35,15 @@ class App extends Component {
     })
     return (
       <div>
-        <Header />
-        <AddForm
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
-        <div>
-          {taskList}
+        <HeaderComponent />
+        <div className="container">
+          <AddForm
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
+          <List>
+            {taskList}
+          </List>
         </div>
       </div>
     );
